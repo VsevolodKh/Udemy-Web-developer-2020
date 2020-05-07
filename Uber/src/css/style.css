@@ -158,14 +158,14 @@ header {
     text-align: center;
 }
 
-.reasons .reasons_block {
+.reasons .reasons-block {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 35px;
 }
 
-.reasons .reasons_block .reasons_round {
+.reasons .reasons-block .reasons-round {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,18 +176,18 @@ header {
     border-radius: 100%;
 }
 
-.reasons .reasons_block .reasons_descr {
+.reasons .reasons-block .reasons-descr {
     width: 343px;
 }
 
-.reasons .reasons_block .reasons_descr .reasons_subtitle{
+.reasons .reasons-block .reasons-descr .reasons-subtitle{
     line-height: 21px;
     color: #1eacc7;
     font-size: 17px;
     font-weight: 400;
 }
 
-.reasons .reasons_block .reasons_descr .reasons_text {
+.reasons .reasons-block .reasons-descr .reasons-text {
     color: #202020;
     font-size: 15px;
     font-weight: 300;
