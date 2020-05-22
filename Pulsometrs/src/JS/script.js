@@ -54,5 +54,50 @@ $('.button_mini').each(function(i) {
     });
 });
 
+// Validation forms
+
+function validateForms(form) {
+    $(form).validate({
+        rules: {
+            name: "required",
+            phone: "required",
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Пожалуйста, введите свое имя",
+            phone: "Пожалуйста, введите свой телефон",
+            email: {
+              required: "Пожалуйста, введите свой e-mail",
+              email: "Неверно введен e-mail"
+            }
+        }
+    });
+}
+validateForms('#consult-form');
+validateForms('#consultation form');
+validateForms('#order form');
+
+// Input mask
+
+// $("input").mask(" +7 (999) 999-99-99");
+
+$('form').submit(function(e) {
+    e.preventDefault()
+    $.ajax({
+        type: 'POST',
+        url: 'mailer/smart.php',
+        data: $(this).serialize()
+    }).done(function() {
+        $(this).find('input').val('');
+        $("#consultation, #order").fadeOut();
+        $(".overlay, #thanks").fadeIn();
+        $('form').trigger('reset');
+    });
+    return false;
+});
+
 });
 })(jQuery);
