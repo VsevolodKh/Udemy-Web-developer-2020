@@ -82,7 +82,7 @@ validateForms('#order form');
 
 // Input mask
 
-// $("input").mask(" +7 (999) 999-99-99");
+$(".mask").mask(" +7 (999) 999-99-99");
 
 $('form').submit(function(e) {
     e.preventDefault()
@@ -98,6 +98,24 @@ $('form').submit(function(e) {
     });
     return false;
 });
+
+// Smooth scroll and page up
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1600) {
+        $('.pageup').fadeIn();
+    } else {
+        $('.pageup').fadeOut();
+    }
+});
+
+$("a[href^='#']").click(function(){
+    var _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+});
+
+new WOW().init();
 
 });
 })(jQuery);
